@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
   def new
+    if current_user
+      redirect_to dashboard_path
+    end 
     # No need for anything in here, we are just going to render our
     # new.html.erb AKA the login page
   end

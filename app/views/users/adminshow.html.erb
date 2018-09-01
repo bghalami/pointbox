@@ -1,0 +1,9 @@
+<h1><%= @user.name %></h1>
+
+<%= @user.points %>
+<%= @user.redeemed_points %>
+<% if @user.role == 1 %>
+  <%= "Role: Admin" %>
+<% else %>
+  <%= "Role: User" %>
+<% end %>

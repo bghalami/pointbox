@@ -1,9 +1,9 @@
-<h1>Create New User</h1>
+<h1>Edit <%= @user.name %></h1>
 
-<%= form_for @user do |f| %>
+<%= form_for @user, url: user_profile_path(@user), html: { method: :put } do |f| %>
   <div>
     <%= f.label :name %>
-    <%= f.text_field :name, autofocus: true %>
+    <%= f.text_field :name%>
   </div>
   <div>
     <%= f.label :username %>
@@ -23,6 +23,6 @@
     <%= f.text_field :role  %>
   </div>
   <div>
-    <%= f.submit "Sign up!" %>
+    <%= f.submit "Submit Changes" %>
   </div>
 <% end %>
