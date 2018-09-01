@@ -3,10 +3,18 @@ Rails.application.routes.draw do
 
   root to: 'homepage#show'
 
-  namespace :admin do
+  resource :admin do
     resource :users, only: [:new, :create]
   end
 
-  resource :users, only: [:show]
+  resource :dashboard, only: [:show]
+
+  get '/login'     => 'sessions#new'
+
+	# create (post) action for when log in form is submitted:
+	post '/login'    => 'sessions#create'
+
+	# delete action to log out:
+	delete '/logout' => 'sessions#destroy'
 
 end

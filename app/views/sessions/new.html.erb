@@ -1,0 +1,17 @@
+<div>
+  <h1>Log In</h1>
+</div>
+
+<%= form_for :login do |f| %>
+  <div>
+    <%= f.label :username %>
+    <%= f.text_field :username, autofocus: true %>
+  </div>
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.submit "Log In" %>
+  </div>
+<% end %>
