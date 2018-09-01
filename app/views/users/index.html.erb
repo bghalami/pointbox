@@ -1,8 +1,11 @@
 <h1>All Users</h1>
 
 <% @users.each do |user| %>
-  <%= link_to user.name, user_profile_path(user) %>
-  <%= user.points %>
-  <%= user.redeemed_points %>
-  <%= link_to "Edit User/Add Points", edit_users_path(user) %>
+  <ul>
+    <li><%= link_to user.name, user_profile_path(user) %></li>
+    <li>Points: <%= user.points %></li>
+    <li>Redeemed Points: <%= user.redeemed_points %></li>
+    <li>Rewards: <%= user.rewards.count %></li>
+    <li><%= link_to "Edit User/Add Points", edit_users_path(user) %></li>
+  </ul>
 <% end %>

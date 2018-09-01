@@ -1,9 +1,14 @@
-<h1><%= @user.name %></h1>
+<h1><strong><%= @user.name %></strong>: <% if @user.role == 1 %><%= "Admin" %><% else %><%= "User" %><% end %></h1>
 
-<%= @user.points %>
-<%= @user.redeemed_points %>
-<% if @user.role == 1 %>
-  <%= "Role: Admin" %>
-<% else %>
-  <%= "Role: User" %>
-<% end %>
+<ul>
+  <li>Points: <%= @user.points %></li>
+  <li>Redeemed Points: <%= @user.redeemed_points %></li>
+  <li>Rewards: </li>
+  <li>
+    <ul>
+      <% @user.rewards.each do |reward| %>
+      <li><%= reward.title %>: <%= reward.price %>pts</li>
+      <% end %>
+    </ul>
+  </li>
+</ul>
