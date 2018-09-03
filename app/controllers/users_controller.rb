@@ -49,6 +49,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def gamble
+    @user = current_user
+    
+  end
+
   def edit
     # require 'pry'; binding.pry
     if current_user.role == 1
@@ -87,6 +92,18 @@ class UsersController < ApplicationController
       redirect_to rewards_path
       flash[:notice] = "Not enough points to buy! Pick a cheaper prize you bum!"
     end
+  end
+
+  def removereward
+
+  end
+
+  def destroy
+    user = User.find(params[:id])
+    user.delete
+
+    redirect_to all_users_path
+    flash[:notice] = "User #{user.name} has been deleted."
   end
 
   private

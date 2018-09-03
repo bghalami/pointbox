@@ -3,6 +3,7 @@
 <% @users.each do |user| %>
   <ul>
     <li><%= link_to user.name, user_profile_path(user) %></li>
+    <li>Role: <% if user.role == 1 %> <%= "Admin" %> <% else %> <%= "User" %> <% end %></li>
     <li>Points: <%= user.points %></li>
     <li>Redeemed Points: <%= user.redeemed_points %></li>
     <li>Rewards: <%= user.rewards.count %></li>
