@@ -1,3 +1,7 @@
 <h1>Risk Some Points!</h1>
 
-<%= form_for @user do |f| %>
+<%= form_for @user, url: users_dashboard_path do |f| %>
+<%= f.label :points %>
+<%= f.text_field :points %>
+<%= f.submit "Roll the Dice!" %>
+<% end %>

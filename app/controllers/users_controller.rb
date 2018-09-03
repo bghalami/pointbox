@@ -51,7 +51,6 @@ class UsersController < ApplicationController
 
   def gamble
     @user = current_user
-    
   end
 
   def edit

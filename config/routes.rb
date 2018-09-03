@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'homepage#show'
 
   resource :users, except: [:edit] do
-    resource :dashboard, only: [:show]
+    resource :dashboard, only: [:show, :update]
   end
   get '/users/edit/:id', to: 'users#edit', as: :edit_users
   put '/user_profile/:id', to: 'users#update', as: :update_users
