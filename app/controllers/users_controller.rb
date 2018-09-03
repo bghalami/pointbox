@@ -1,8 +1,13 @@
 class UsersController < ApplicationController
 
   def new
-    if current_user.role == 1
-      @user = User.new
+    if current_user
+      if current_user.role == 1
+        @user = User.new
+      else
+        redirect_to root_path
+        flash[:notice] = 'You must be an admin to access this page.'
+      end
     else
       redirect_to root_path
       flash[:notice] = 'You must be an admin to access this page.'
@@ -68,6 +73,22 @@ class UsersController < ApplicationController
     end
   end
 
+  def buyreward
+    # require 'pry'; binding.pry
+    user = current_user
+    reward = Reward.find(params[:id])
+    if user.points > reward.price
+      user.points -= reward.price
+      user.rewards << reward
+      user.redeemed_points += reward.price
+      user.save
+      redirect_to root_path
+    else
+      redirect_to rewards_path
+      flash[:notice] = "Not enough points to buy! Pick a cheaper prize you bum!"
+    end
+  end
+
   private
 
   def user_params
@@ -75,7 +96,7 @@ class UsersController < ApplicationController
     # whitelist of allowed fields #=> permit(:name, :email, ...)
     # that can be submitted by a
     # form to the user model #=> require(:user)
-    params.require(:user).permit(:name, :username, :password, :password_confirmation, :role)
+    params.require(:user).permit(:name, :username, :password, :points, :redeemed_points, :password_confirmation, :role)
   end
 
 end

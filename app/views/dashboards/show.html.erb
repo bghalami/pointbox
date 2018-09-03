@@ -1,1 +1,11 @@
-Hey
+<h1> Hello <%= @user.name %></h1>
+
+<h3>You have <%= @user.points %> points!</h3>
+<h3>So far you've spent <%= @user.redeemed_points %> points!</h3>
+<h3>Here are your rewards!</h3>
+<ul>
+  <% @user.rewards.each do |reward| %>
+    <li><%= reward.title %></li>
+    <li>Price: <%= reward.price %> points</li>
+  <% end %>
+</ul>

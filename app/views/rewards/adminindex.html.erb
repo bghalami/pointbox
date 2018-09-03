@@ -1,0 +1,8 @@
+<h1>Reward Shop</h1>
+<%= link_to "Create New Award", new_reward_path %>
+<% @rewards.each do |reward| %>
+<ul>
+  <li><%= reward.title %></li>
+  <li>Price: <%= reward.price %></li>
+</ul>
+<% end %>

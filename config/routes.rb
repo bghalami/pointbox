@@ -9,9 +9,16 @@ Rails.application.routes.draw do
   get '/users/edit/:id', to: 'users#edit', as: :edit_users
   put '/user_profile/:id', to: 'users#update', as: :update_users
 
+  get '/users/:user_id/reward/:id', to: 'users#buyreward', as: :users_buy_reward
+
+
   resource :admin, only: [:show]
 
+  resources :rewards, only: [:show, :index, :new, :create, :edit, :update]
+
   get '/user_profile/:id', to: 'users#adminshow', as: :user_profile
+
+  get '/rewards', to: 'rewards#adminindex', as: :admin_rewards
 
   get '/all_users'     => 'users#index'
 
