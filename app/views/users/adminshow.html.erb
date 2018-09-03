@@ -1,5 +1,8 @@
 <h1><strong><%= @user.name %></strong>: <% if @user.role == 1 %><%= "Admin" %><% else %><%= "User" %><% end %></h1>
-
+<%= link_to "See All Users", all_users_path %>
+<br>
+<br>
+<%= link_to "Edit User/Add Points", edit_users_path(@user) %>
 <ul>
   <li>Points: <%= @user.points %></li>
   <li>Redeemed Points: <%= @user.redeemed_points %></li>

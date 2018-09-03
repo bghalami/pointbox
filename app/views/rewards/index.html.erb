@@ -1,0 +1,9 @@
+<h1>Reward Shop</h1>
+
+<% @rewards.each do |reward| %>
+<ul>
+  <li><%= reward.title %></li>
+  <li>Price: <%= reward.price %></li>
+  <li><%= link_to "Buy", users_buy_reward_path(current_user, reward) %></li>
+</ul>
+<% end %>
