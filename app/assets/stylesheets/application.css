@@ -20,7 +20,15 @@ body {
   font-family: 'Varela Round', sans-serif;
 }
 
+ul {
+  list-style: none;
+}
+
 h1 {
+  font-family: 'Chango', cursive;
+}
+
+h2 {
   font-family: 'Chango', cursive;
 }
 
@@ -106,6 +114,24 @@ input {
   font-size: 16px;
 }
 
-.user-show {
-  
+.user-reward-show {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.user-reward-holder {
+
+}
+
+.user-reward-card {
+  padding: 5px;
+  margin: 10px;
+  width: 100px;
+  height: 80px;
+  background-color: #9D5C63;
+  color: #FEF5EF;
+  border: 5px solid #E4BB97;
+  border-radius: 30%;
 }

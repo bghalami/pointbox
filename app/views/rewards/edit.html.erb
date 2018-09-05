@@ -1,9 +1,14 @@
 <h1>Edit <%= @reward.title %> Reward Here</h1>
-
+<div class="form">
 <%= form_for @reward do |f| %>
 <%= f.label :title %>
 <%= f.text_field :title %>
+<br>
+<br>
 <%= f.label :price %>
 <%= f.text_field :price %>
+<br>
+<br>
 <%= f.submit %>
 <% end %>
+</div>

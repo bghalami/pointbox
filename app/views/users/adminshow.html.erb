@@ -10,13 +10,16 @@
 <ul>
   <li>Points: <%= @user.points %></li>
   <li>Redeemed Points: <%= @user.redeemed_points %></li>
-  <li>Rewards: </li>
-  <li>
-    <ul>
+  <li><h2>Rewards: </h2></li>
+  <div class='user-reward-holder'>
+    <ul class='user-reward-show'>
       <% @user.rewards.each do |reward| %>
-      <li><%= reward.title %>: <%= reward.price %>pts</li>
+      <ul class='user-reward-card'>
+        <li><%= reward.title %>:</li>
+        <li><%= reward.price %>pts</li>
+      </ul>
       <% end %>
     </ul>
-  </li>
+  </div>
 </ul>
 </div>
