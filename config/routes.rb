@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   get '/rewards', to: 'rewards#adminindex', as: :admin_rewards
 
+  get '/user/:user_id/rewards/:id', to: 'users#removereward', as: :remove_reward
+
   get '/users/:user_id/reward/:id', to: 'users#buyreward', as: :users_buy_reward
 
   get '/enable_rewards/:id', to: 'rewards#enable', as: :enable_reward

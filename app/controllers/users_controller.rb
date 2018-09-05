@@ -15,20 +15,30 @@ class UsersController < ApplicationController
   end
 
   def adminshow
-    if current_user.role == 1
-      @user = User.find(params[:id])
+    if current_user
+      if current_user.role == 1
+        @user = User.find(params[:id])
+      else
+        redirect_to root_path
+        flash[:notice] = 'You must be an admin to access this page.'
+      end
     else
       redirect_to root_path
-      flash[:notice] = 'You must be an admin to access this page.'
+      flash[:notice] = 'You must be an logged in to access this page.'
     end
   end
 
   def index
-    if current_user.role == 1
-      @users = User.all.order(id: :asc)
+    if current_user
+      if current_user.role == 1
+        @users = User.all.order(id: :asc)
+      else
+        redirect_to root_path
+        flash[:notice] = 'You must be an admin to access this page.'
+      end
     else
       redirect_to root_path
-      flash[:notice] = 'You must be an admin to access this page.'
+      flash[:notice] = 'You must be an logged in to access this page.'
     end
   end
 
@@ -94,7 +104,11 @@ class UsersController < ApplicationController
   end
 
   def removereward
-
+    reward = Reward.find(params[:id])
+    user = User.find(params[:user_id])
+    user.rewards.delete(reward)
+    redirect_to user_profile_path(user)
+    flash[:notice] = "#{reward.title} has been removed from rewards"
   end
 
   def destroy

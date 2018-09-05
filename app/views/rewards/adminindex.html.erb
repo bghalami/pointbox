@@ -1,9 +1,10 @@
 <h1>Reward Shop</h1>
 <%= link_to "Create New Award", new_reward_path %>
 <h2>Active Rewards</h2>
+  <div class='reward-holder'>
   <% @rewards.each do |reward| %>
   <% if reward.disabled == 0 %>
-    <ul>
+    <ul class='reward-card'>
       <li><%= reward.title %></li>
       <li>Price: <%= reward.price %></li>
       <li><%= link_to "Update", edit_reward_path(reward) %></li>
@@ -11,11 +12,12 @@
     </ul>
   <% end %>
   <% end %>
-
+</div>
   <h2>Disabled Rewards</h2>
+  <div class='reward-holder'>
   <% @rewards.each do |reward| %>
     <% if reward.disabled == 1 %>
-    <ul>
+    <ul class='reward-card'>
       <li><%= reward.title %></li>
       <li>Price: <%= reward.price %></li>
       <li><%= link_to "Update", edit_reward_path(reward) %></li>
@@ -23,3 +25,4 @@
     </ul>
   <% end %>
 <% end %>
+</div>

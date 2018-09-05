@@ -13,3 +13,125 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  text-align: center;
+  background-color: #fef5ef;
+  font-family: 'Varela Round', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-family: 'Chango', cursive;
+}
+
+h2 {
+  font-family: 'Chango', cursive;
+}
+
+.form {
+  text-align: center;
+  background-color: #584b53;
+  color: #e4bb97;
+  padding: 40px;
+  margin: auto;
+  width: 300px;
+  font-size: 16px;
+}
+
+input {
+  background-color: #e4bb97;
+  color: #584B53;
+  font-size: 16px;
+}
+
+.navbarr {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 20px 0px 20px;
+}
+
+.navbarr a:link {
+    color: #9D5C63;
+}
+
+.navbarr a:visited {
+    color: #584B53;
+}
+
+.navbarr a:hover {
+    color: #9D5C63;
+    background-color: #E4BB97;
+}
+
+.navbarr a:active {
+  background-color: #9D5C63;
+  color: #E4BB97;
+}
+
+.reward-card {
+  list-style: none;
+  border: 5px solid #9D5C63;
+  border-radius: 30%;
+  background-color: #D6E3F8;
+  padding: 20px;
+  width: 150px;
+  height: 100px;
+  text-align: left;
+}
+
+.reward-holder {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-holder {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-card {
+  list-style: none;
+  border: 5px solid #9D5C63;
+  border-radius: 30%;
+  background-color: #D6E3F8;
+  padding: 20px;
+  width: 150px;
+  height: 200px;
+  text-align: left;
+}
+
+.form-new {
+  text-align: right;
+  background-color: #584b53;
+  color: #e4bb97;
+  padding: 40px 40px 40px 0px;
+  margin: auto;
+  width: 400px;
+  font-size: 16px;
+}
+
+.user-reward-show {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.user-reward-holder {
+
+}
+
+.user-reward-card {
+  padding: 5px;
+  margin: 10px;
+  width: 100px;
+  height: 80px;
+  background-color: #9D5C63;
+  color: #FEF5EF;
+  border: 5px solid #E4BB97;
+  border-radius: 30%;
+}

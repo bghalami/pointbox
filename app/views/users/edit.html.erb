@@ -1,37 +1,43 @@
 <h1>Edit <%= @user.name %></h1>
-
+<div class='form-new'>
 <%= form_for @user, url: user_profile_path(@user), html: { method: :put } do |f| %>
   <div>
     <%= f.label :name %>
     <%= f.text_field :name%>
   </div>
+  <br>
   <div>
     <%= f.label :username %>
     <%= f.text_field :username %>
   </div>
+  <br>
   <div>
     <%= f.label :points %>
     <%= f.text_field :points %>
   </div>
+  <br>
   <div>
     <%= f.label :redeemed_points %>
     <%= f.text_field :redeemed_points %>
   </div>
-
+<br>
   <div>
     <%= f.label :password %>
     <%= f.password_field :password %>
   </div>
-
+<br>
   <div>
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
   </div>
+  <br>
   <div>
     <%= f.label :role %>
     <%= f.text_field :role  %>
   </div>
+  <br>
   <div>
     <%= f.submit "Submit Changes" %>
   </div>
 <% end %>
+</div>
