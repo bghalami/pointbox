@@ -1,11 +1,12 @@
 <h1>Reward Shop</h1>
-
+<div class='reward-holder'>
 <% @rewards.each do |reward| %>
   <% if reward.disabled == 0 %>
-    <ul>
+    <ul class='reward-card'>
       <li><%= reward.title %></li>
       <li>Price: <%= reward.price %></li>
       <li><%= link_to "Buy", users_buy_reward_path(current_user, reward) %></li>
     </ul>
   <% end %>
 <% end %>
+</div>

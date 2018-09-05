@@ -4,7 +4,9 @@
 <br>
 <%= link_to "Edit User/Add Points", edit_users_path(@user) %>
 <br>
+<br>
 <%= link_to "DELETE USER", user_delete_path(@user), method: :DELETE %>
+<div class="user-show">
 <ul>
   <li>Points: <%= @user.points %></li>
   <li>Redeemed Points: <%= @user.redeemed_points %></li>
@@ -13,8 +15,8 @@
     <ul>
       <% @user.rewards.each do |reward| %>
       <li><%= reward.title %>: <%= reward.price %>pts</li>
-      <li><%= link_to "Remove Reward", remove_reward_path(reward) %>
       <% end %>
     </ul>
   </li>
 </ul>
+</div>

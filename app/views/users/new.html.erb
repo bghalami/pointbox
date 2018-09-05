@@ -1,28 +1,33 @@
 <h1>Create New User</h1>
-
+<div class="form-new">
 <%= form_for @user do |f| %>
   <div>
     <%= f.label :name %>
     <%= f.text_field :name, autofocus: true %>
   </div>
+  <br>
   <div>
     <%= f.label :username %>
     <%= f.text_field :username %>
   </div>
-
+<br>
   <div>
     <%= f.label :password %>
     <%= f.password_field :password %>
   </div>
+  <br>
   <div>
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
   </div>
+  <br>
   <div>
     <%= f.label :role %>
     <%= f.text_field :role  %>
   </div>
+  <br>
   <div>
-    <%= f.submit "Sign up!" %>
+    <%= f.submit "Create User" %>
   </div>
 <% end %>
+</div>

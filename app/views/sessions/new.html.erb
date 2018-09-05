@@ -1,17 +1,20 @@
 <div>
   <h1>Log In</h1>
 </div>
-
+<div class="form">
 <%= form_for :login do |f| %>
-  <div>
+  <div class='form-field'>
     <%= f.label :username %>
     <%= f.text_field :username, autofocus: true %>
   </div>
-  <div>
+  <br>
+  <div class='form-field'>
     <%= f.label :password %>
     <%= f.password_field :password %>
   </div>
-  <div>
+  <br>
+  <div class='login button'>
     <%= f.submit "Log In" %>
   </div>
 <% end %>
+</div>
